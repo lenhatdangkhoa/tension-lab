@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tension Lab Stringing | Athens, GA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;800&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a; /* Deep Navy/Black */
+            --card-bg: #1e293b; /* Slate Dark */
+            --accent-neon: #2ee844; /* Modern Volt/Lime */
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --white: #ffffff;
+        }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            color: var(--text-main); 
+            background: var(--bg-dark); 
+            background-image: radial-gradient(circle at 0% 0%, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+        }
+
+        header { 
+            padding: 5rem 1rem 3rem; 
+            text-align: center; 
+        }
+
+        /* LOGO STYLING */
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(173, 255, 47, 0.2));
+        }
+        .logo-text-fallback {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: var(--white);
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .logo-text-fallback span {
+            color: var(--accent-neon);
+        }
+
+        .subtitle {
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent-neon);
+            opacity: 0.9;
+        }
+
+        section { 
+            max-width: 900px; 
+            margin: 0 auto 4rem; 
+            padding: 0 1.5rem;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem; 
+            border-radius: 24px; 
+        }
+
+        h2 { 
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white); 
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 span.amp {
+            font-family: 'Inter', sans-serif; /* Using a more stable font for the symbol */
+            color: var(--accent-neon);
+            font-weight: 300;
+            font-weight: 700;
+
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-neon), transparent);
+            opacity: 0.3;
+        }
+
+        .price-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+        }
+
+        .service-card { 
+            background: var(--card-bg);
+            padding: 2rem; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover {
+            border-color: var(--accent-neon);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--accent-neon);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .coming-soon { 
+            opacity: 0.5;
+            filter: grayscale(1);
+            border-style: dashed;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-button { 
+            display: inline-block; 
+            background: var(--accent-neon); 
+            color: var(--bg-dark); 
+            padding: 1rem 2.2rem; 
+            text-decoration: none; 
+            border-radius: 14px; 
+            font-weight: 700; 
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(173, 255, 47, 0.3);
+        }
+        .cta-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(173, 255, 47, 0.5);
+        }
+
+        .btn-outline { 
+            background: transparent; 
+            color: var(--white); 
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--white);
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 4rem 1rem; 
+            font-size: 0.85rem; 
+            color: var(--text-dim); 
+        }
+
+        strong { color: var(--white); }
+        em { color: var(--text-dim); font-style: normal; font-size: 0.9rem; }
+
+        .phone-display {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2ee844;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: color 0.3s;
+        }
+        .addon-tag {
+            display: inline-block;
+            background: rgba(0, 255, 30, 0.15); /* Slightly darker green tint */
+            color: var(--white); /* This makes the text white */
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid var(--accent-neon); /* Keeps the glow border */
+            margin-top: 1rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <div id="fallback" class="logo-text-fallback">TENSION<span>LAB</span></div>
+    </div>
+    <p class="subtitle">Precision Racquet Stringing • Athens, GA</p>
+</header>
+
+<section id="services">
+    <h2>Services<span class="amp">&</span> Pricing</h2>
+    <div class="price-grid">
+        <div class="service-card">
+            <h3>Badminton</h3>
+            <div class="price-row">
+                <span>Labor</span>
+                <strong>$15</strong>
+            </div>
+            <div class="price-row">
+                <span>Labor + String</span>
+                <strong>$25 - $28</strong>
+            </div>
+            <p><em>Equipped with Yonex BG65, BG80, and Exbolt series.</em></p>
+            
+            <div class="addon-tag">Expedited (Within 2 hours): +$5</div>
+        </div>
+        
+        <div class="service-card coming-soon">
+            <h3>Tennis</h3>
+            <p><strong>Coming Soon</strong></p>
+            <p>Electronic constant-pull stringing for tennis racquets will be available shortly.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="glass-card" style="text-align: center;">
+        <h2>Ready to Book?</h2>
+        <p>Book your service via <strong>text or email</strong>.</p>
+        
+        <a class="phone-display">(706) 461-6521</a>
+            
+        <p>Drop-off and pick-up available at:<br>
+        <strong><u>247 Morning Drive, Athens, GA 30606</u></strong></p>
+        
+        <p>Typical turnaround: <strong>~24 hours.</strong></p>
+        
+        <div class="cta-group">
+            <a href="tel:7064616521" class="cta-button">Text to Book</a>
+            <a href="mailto:lenhatdangkhoa@gmail.com" class="cta-button btn-outline">Email Inquiry</a>
+        </div>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-dim);">
+            <em>Fastest response via text message.</em>
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Tension Lab Stringing. <br> Built for performance.</p>
+</footer>
+
+</body>
+</html>
