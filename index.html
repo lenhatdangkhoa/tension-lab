@@ -7,255 +7,19 @@
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;800&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0f172a; /* Deep Navy/Black */
-            --card-bg: #1e293b; /* Slate Dark */
-            --accent-neon: #28e23d; /* Modern Volt/Lime */
-            --text-main: #f8fafc;
-            --text-dim: #91a6c2;
-            --white: #ffffff;
-        }
-        
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            color: var(--text-main); 
-            background: var(--bg-dark); 
-            background-image: radial-gradient(circle at 0% 0%, #1e293b 0%, #0f172a 100%);
-            min-height: 100vh;
-        }
-
-        header { 
-            padding: 5rem 1rem 3rem; 
-            text-align: center; 
-        }
-
-        /* LOGO STYLING */
-        .logo-container {
-            margin-bottom: 1.5rem;
-        }
-        .logo-img {
-            max-width: 180px;
-            height: auto;
-            filter: drop-shadow(0 0 10px rgba(173, 255, 47, 0.2));
-        }
-        .logo-text-fallback {
-            font-family: 'Outfit', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            color: var(--white);
-            margin: 0;
-            text-transform: uppercase;
-        }
-        .logo-text-fallback span {
-            color: var(--accent-neon);
-        }
-
-        .subtitle {
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--accent-neon);
-            opacity: 0.9;
-        }
-
-        section { 
-            max-width: 900px; 
-            margin: 0 auto 4rem; 
-            padding: 0 1.5rem;
-        }
-
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem; 
-            border-radius: 24px; 
-        }
-
-        h2 { 
-            font-family: 'Outfit', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white); 
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            letter-spacing: -0.5px;
-        }
-
-        h2 span.amp {
-            font-family: 'Inter', sans-serif; /* Using a more stable font for the symbol */
-            color: var(--accent-neon);
-            font-weight: 300;
-            font-weight: 700;
-
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--accent-neon), transparent);
-            opacity: 0.3;
-        }
-
-        .price-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
-        }
-
-        .service-card { 
-            background: var(--card-bg);
-            padding: 2rem; 
-            border-radius: 20px; 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .service-card:hover {
-            border-color: var(--accent-neon);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .service-card h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: var(--accent-neon);
-        }
-
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .coming-soon { 
-            opacity: 0.5;
-            filter: grayscale(1);
-            border-style: dashed;
-        }
-
-        .cta-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .cta-button { 
-            display: inline-block; 
-            background: var(--accent-neon); 
-            color: var(--bg-dark); 
-            padding: 1rem 2.2rem; 
-            text-decoration: none; 
-            border-radius: 14px; 
-            font-weight: 700; 
-            transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(173, 255, 47, 0.3);
-        }
-        .cta-button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(173, 255, 47, 0.5);
-        }
-
-        .btn-outline { 
-            background: transparent; 
-            color: var(--white); 
-            border: 2px solid rgba(255,255,255,0.1);
-            box-shadow: none;
-        }
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: var(--white);
-        }
-
-        footer { 
-            text-align: center; 
-            padding: 4rem 1rem; 
-            font-size: 0.85rem; 
-            color: var(--text-dim); 
-        }
-
-        strong { color: var(--white); }
-        em { color: var(--text-dim); font-style: normal; font-size: 0.9rem; }
-
-        .phone-display {
-            display: block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #2ee844;
-            text-decoration: none;
-            margin: 1rem 0;
-            transition: color 0.3s;
-        }
-        .addon-tag {
-            display: inline-block;
-            background: rgba(0, 255, 30, 0.15); /* Slightly darker green tint */
-            color: var(--white); /* This makes the text white */
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border: 1px solid var(--accent-neon); /* Keeps the glow border */
-            margin-top: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .book-now-btn {
-            width: 100%;
-            max-width: 400px;
-            background: #33cd45;
-            color: var(--bg-dark);
-            padding: 1.2rem;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Update the layout to handle 3 items better */
-        .contact-layout {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem; /* Tighter gap for multiple buttons */
-            margin-top: 2rem;
-        }
-
-        /* Ensure secondary buttons have a consistent width */
-        .sms-secondary, .email-secondary {
-            width: 100%;
-            max-width: 300px;
-            background: #1e293b;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .sms-secondary:hover, .email-secondary:hover {
-            color: var(--white);
-            border-color: var(--white);
-            background: rgba(255, 255, 255, 0.05);
-        }
-            
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">TENSION<span>LAB</span></a>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#equipment">Equipment</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
 <header>
     <div class="logo-container">
         <div id="fallback" class="logo-text-fallback">TENSION<span>LAB</span></div>
@@ -285,6 +49,35 @@
             <h3>Tennis</h3>
             <p><strong>Coming Soon</strong></p>
             <p>Electronic constant-pull stringing for tennis racquets will be available shortly.</p>
+        </div>
+    </div>
+</section>
+
+<section id="equipment">
+    <h2>The Stringing Machine</h2>
+    <div class="glass-card">
+        <div class="equipment-layout">
+            <div class="equipment-text">
+                <p>Precision is driven by the <strong>Wise 2086 Electronic Tension Head</strong>. This professional-grade constant-pull system is accurate to within 0.1 lbs, ensuring your tension is identical every single time you restring.</p>
+                
+                <p>Your racquet is protected by the <strong>GAMMA Momentum 6+</strong> mounting system. Its 6-point suspension securely holds the frame at the most critical points, eliminating stress and warping even at professional-level tensions.</p>
+                
+                <div class="spec-list">
+                    <div class="spec-item"><span>●</span> Wise 2086 Constant-Pull Accuracy</div>
+                    <div class="spec-item"><span>●</span> 6-Point Secure Mounting</div>
+                    <div class="spec-item"><span>●</span> Specialized Load Spreaders</div>
+                    <div class="spec-item"><span>●</span> Diablos for string protection</div>
+                </div>
+            </div>
+            
+            <div class="equipment-gallery">
+                <div class="photo-frame">
+                    <img src="assets/machine.jpg" alt="Wise 2086 Tension Head" onerror="this.src='https://via.placeholder.com/400x300/1e293b/28e23d?text=Wise+2086+Head'">
+                </div>
+                <div class="photo-frame">
+                    <img src="assets/machine2.jpg" alt="Gamma Momentum 6+ Mounting" onerror="this.src='https://via.placeholder.com/400x300/1e293b/28e23d?text=Momentum+6+Mounting'">
+                </div>
+            </div>
         </div>
     </div>
 </section>

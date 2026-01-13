@@ -1,0 +1,366 @@
+:root {
+    --bg-dark: #0f172a; /* Deep Navy/Black */
+    --card-bg: #1e293b; /* Slate Dark */
+    --accent-neon: #28e23d; /* Modern Volt/Lime */
+    --text-main: #f8fafc;
+    --text-dim: #91a6c2;
+    --white: #ffffff;
+}
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    line-height: 1.6; 
+    margin: 0; 
+    color: var(--text-main); 
+    background: var(--bg-dark); 
+    background-image: radial-gradient(circle at 0% 0%, #1e293b 0%, #0f172a 100%);
+    min-height: 100vh;
+}
+
+header { 
+    padding: 5rem 1rem 3rem; 
+    text-align: center; 
+}
+
+/* LOGO STYLING */
+.logo-container {
+    margin-bottom: 1.5rem;
+}
+.logo-img {
+    max-width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(173, 255, 47, 0.2));
+}
+.logo-text-fallback {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: var(--white);
+    margin: 0;
+    text-transform: uppercase;
+}
+.logo-text-fallback span {
+    color: var(--accent-neon);
+}
+
+.subtitle {
+    text-transform: uppercase; 
+    letter-spacing: 4px; 
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent-neon);
+    opacity: 0.9;
+}
+
+section { 
+    max-width: 900px; 
+    margin: 0 auto 4rem; 
+    padding: 0 1.5rem;
+}
+
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem; 
+    border-radius: 24px; 
+}
+
+h2 { 
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white); 
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    letter-spacing: -0.5px;
+}
+
+h2 span.amp {
+    font-family: 'Inter', sans-serif; /* Using a more stable font for the symbol */
+    color: var(--accent-neon);
+    font-weight: 300;
+    font-weight: 700;
+
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-neon), transparent);
+    opacity: 0.3;
+}
+
+.price-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+}
+
+.service-card { 
+    background: var(--card-bg);
+    padding: 2rem; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.service-card:hover {
+    border-color: var(--accent-neon);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.service-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--accent-neon);
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.coming-soon { 
+    opacity: 0.5;
+    filter: grayscale(1);
+    border-style: dashed;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cta-button { 
+    display: inline-block; 
+    background: var(--accent-neon); 
+    color: var(--bg-dark); 
+    padding: 1rem 2.2rem; 
+    text-decoration: none; 
+    border-radius: 14px; 
+    font-weight: 700; 
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(173, 255, 47, 0.3);
+}
+.cta-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(173, 255, 47, 0.5);
+}
+
+.btn-outline { 
+    background: transparent; 
+    color: var(--white); 
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: none;
+}
+.btn-outline:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--white);
+}
+
+footer { 
+    text-align: center; 
+    padding: 4rem 1rem; 
+    font-size: 0.85rem; 
+    color: var(--text-dim); 
+}
+
+strong { color: var(--white); }
+em { color: var(--text-dim); font-style: normal; font-size: 0.9rem; }
+
+.phone-display {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2ee844;
+    text-decoration: none;
+    margin: 1rem 0;
+    transition: color 0.3s;
+}
+.addon-tag {
+    display: inline-block;
+    background: rgba(0, 255, 30, 0.15); /* Slightly darker green tint */
+    color: var(--white); /* This makes the text white */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid var(--accent-neon); /* Keeps the glow border */
+    margin-top: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.book-now-btn {
+    width: 100%;
+    max-width: 400px;
+    background: #33cd45;
+    color: var(--bg-dark);
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Update the layout to handle 3 items better */
+.contact-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Tighter gap for multiple buttons */
+    margin-top: 2rem;
+}
+
+/* Ensure secondary buttons have a consistent width */
+.sms-secondary, .email-secondary {
+    width: 100%;
+    max-width: 300px;
+    background: #1e293b;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.sms-secondary:hover, .email-secondary:hover {
+    color: var(--white);
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+}
+    
+
+.equipment-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .equipment-layout { grid-template-columns: 1fr; }
+}
+
+.equipment-text p {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+}
+
+.spec-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.spec-item {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spec-item span {
+    color: var(--accent-neon);
+}
+
+.equipment-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.photo-frame {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.photo-frame:hover img {
+    transform: scale(1.05);
+}
+/* NAVBAR STYLING */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.8); /* Matches your bg-dark */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.nav-logo span {
+    color: var(--accent-neon);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-neon);
+}
+
+/* Smooth Scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adjust header padding so nav doesn't overlap content */
+header {
+    padding-top: 3rem; 
+}
