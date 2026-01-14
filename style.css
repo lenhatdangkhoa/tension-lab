@@ -355,6 +355,64 @@ em { color: var(--text-dim); font-style: normal; font-size: 0.9rem; }
     color: var(--accent-neon);
 }
 
+/* Mobile menu toggle button */
+.nav-container { position: relative; }
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-main);
+    position: relative;
+}
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: var(--text-main);
+}
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(15, 23, 42, 0.95);
+        flex-direction: column;
+        gap: 0;
+        padding: 0.75rem 1rem;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+        padding: 0.75rem 0.5rem;
+        font-size: 1rem;
+        color: var(--text-main);
+    }
+    .nav-links a + a { border-top: 1px solid rgba(255,255,255,0.04); }
+
+    /* Make header/logo more compact on phones */
+    .logo-img { max-width: 140px; }
+    .logo-text-fallback { font-size: 2.4rem; }
+    header { padding: 2.5rem 1rem 1.5rem; }
+}
+
 /* Smooth Scrolling for the whole page */
 html {
     scroll-behavior: smooth;

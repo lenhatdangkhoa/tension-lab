@@ -13,6 +13,9 @@
 <nav class="navbar">
     <div class="nav-container">
         <a href="#" class="nav-logo">TENSION<span>LAB</span></a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
         <div class="nav-links">
             <a href="#services">Services</a>
             <a href="#equipment">Equipment</a>
@@ -116,6 +119,20 @@
 <footer>
     <p>&copy; 2026 Tension Lab Stringing. <br> Built for performance.</p>
 </footer>
+
+<script>
+// Mobile nav toggle
+;(function(){
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        links.classList.toggle('open');
+    });
+})();
+</script>
 
 </body>
 </html>
