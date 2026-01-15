@@ -422,3 +422,69 @@ html {
 header {
     padding-top: 3rem; 
 }
+
+/* Container for the product image */
+.product-image {
+  width: 100%;
+  height: 250px; /* Set a fixed height for consistency */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+/* The actual image */
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Prevents stretching; keeps the whole image visible */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Grid adjustment for responsiveness */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.product-card {
+  text-align: center; /* Centers the H3, P, and Strong tags */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures the flex items stay centered */
+  background-color: #0f172a; /* Assuming your dark theme from earlier */
+  border-radius: 12px;
+}
+
+/* Ensure the title and price take up full width for proper alignment */
+.product-card h3, 
+.product-card p, 
+.product-card strong {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+.product-card strong {
+  color: var(--accent-neon); /* Neon yellow/green */
+}
+.product-card h3 {
+  margin-top: 10px;    /* Space between image and title */
+  margin-bottom: 2px;  /* Minimal space between title and description */
+  line-height: 1.2;    /* Tightens the line height if the text wraps */
+}
+
+.disclaimer {
+  font-size: 0.7rem;      /* Small text */
+  color: #666;            /* Muted grey */
+  margin-top: 15px;
+  line-height: 1.4;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
