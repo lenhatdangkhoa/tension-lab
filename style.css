@@ -482,7 +482,9 @@ header {
 .product-price {
   margin-top: 8px;
 }
-.buy-button {
+.buy-button,
+.add-to-cart,
+.checkout-button {
   margin-top: 12px;
   display: inline-block;
   background: var(--accent-neon);
@@ -494,9 +496,94 @@ header {
   transition: 0.2s ease;
   box-shadow: 0 6px 14px rgba(40, 226, 61, 0.25);
 }
-.buy-button:hover {
+.buy-button:hover,
+.add-to-cart:hover,
+.checkout-button:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(40, 226, 61, 0.35);
+}
+.add-to-cart,
+.checkout-button {
+  border: none;
+  cursor: pointer;
+}
+.checkout-button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cart-panel {
+  margin: 1.5rem auto 0;
+  max-width: 760px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cart-panel h3 {
+  margin-top: 0;
+}
+.cart-empty {
+  color: var(--text-dim);
+}
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 12px;
+}
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.65);
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cart-item-name {
+  font-weight: 700;
+}
+.cart-item-price {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.qty-btn,
+.remove-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.remove-btn {
+  background: rgba(255, 255, 255, 0.08);
+}
+.cart-item-qty {
+  min-width: 24px;
+  text-align: center;
+}
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 1.05rem;
 }
 .product-card h3 {
   margin-top: 10px;    /* Space between image and title */

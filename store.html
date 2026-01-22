@@ -39,7 +39,9 @@
         <link itemprop="availability" href="https://schema.org/InStock">
         $8 / pack
       </strong>
-      <a class="buy-button" href="https://buy.stripe.com/YOUR_LINK_BG65TI" target="_blank" rel="noopener">Buy now</a>
+      <button class="add-to-cart" data-name="Yonex BG65 Titanium" data-price="8.00" data-price-id="price_1SrkzQHURkMD8ixw4TrxL3Em">
+        Add to cart
+      </button>
     </div>
 
     <div class="product-card" itemscope itemtype="https://schema.org/Product">
@@ -55,7 +57,9 @@
         <link itemprop="availability" href="https://schema.org/InStock">
         $12 / pack
       </strong>
-      <a class="buy-button" href="https://buy.stripe.com/YOUR_LINK_EXBOLT68" target="_blank" rel="noopener">Buy now</a>
+      <button class="add-to-cart" data-name="Yonex Exbolt 68" data-price="12.00" data-price-id="price_1SrliXHURkMD8ixwq7i51UE2">
+        Add to cart
+      </button>
     </div>
 
     <div class="product-card" itemscope itemtype="https://schema.org/Product">
@@ -71,7 +75,9 @@
         <link itemprop="availability" href="https://schema.org/InStock">
         $10 / pack
       </strong>
-      <a class="buy-button" href="https://buy.stripe.com/YOUR_LINK_BG80" target="_blank" rel="noopener">Buy now</a>
+      <button class="add-to-cart" data-name="Yonex BG80" data-price="10.00" data-price-id="price_1SrlgyHURkMD8ixwqc3jctvO">
+        Add to cart
+      </button>
     </div>
 
     <div class="product-card" itemscope itemtype="https://schema.org/Product">
@@ -87,29 +93,42 @@
         <link itemprop="availability" href="https://schema.org/InStock">
         $8 / 3-pack
       </strong>
-      <a class="buy-button" href="https://buy.stripe.com/YOUR_LINK_SUPERGRAP" target="_blank" rel="noopener">Buy now</a>
+      <button class="add-to-cart" data-name="Yonex Super Grap" data-price="8.00" data-price-id="price_1SrloPHURkMD8ixwHvW7xDKI">
+        Add to cart
+      </button>
     </div>
 
     <div class="product-card" itemscope itemtype="https://schema.org/Product">
       <div class="product-image">
-        <img src="assets/products/cushion.jpg" alt="Yonex Cushion Wrap" itemprop="image">
+        <img src="assets/products/cushion.jpg" alt="Cushion Wrap" itemprop="image">
       </div>
       <h3 itemprop="name">Cushion Wrap</h3>
       <p itemprop="description"><i>Vibration Dampening</i></p>
-      <meta itemprop="brand" content="Yonex">
       <strong class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
         <meta itemprop="priceCurrency" content="USD">
-        <meta itemprop="price" content="10.00">
+        <meta itemprop="price" content="5.00">
         <link itemprop="availability" href="https://schema.org/InStock">
-        $10 / roll
+        $5 / roll
       </strong>
-      <a class="buy-button" href="https://buy.stripe.com/YOUR_LINK_CUSHIONWRAP" target="_blank" rel="noopener">Buy now</a>
+      <button class="add-to-cart" data-name="Cushion Wrap" data-price="5.00" data-price-id="price_1Srlr3HURkMD8ixwdnmmxAYG">
+        Add to cart
+      </button>
     </div>
 
   </div>
   <p class="payment-note">
     Stripe processing fee (US): 2.9% + $0.30 per successful card charge.
   </p>
+  <div class="cart-panel">
+    <h3>Your Cart</h3>
+    <p class="cart-empty">Your cart is empty.</p>
+    <ul class="cart-items"></ul>
+    <div class="cart-summary">
+      <span>Total</span>
+      <strong class="cart-total">$0.00</strong>
+    </div>
+    <button class="checkout-button" disabled>Checkout</button>
+  </div>
 </section>
 
 
@@ -121,5 +140,6 @@
     <p>&copy; 2026 Tension Lab Stringing</p>
 </footer>
 
+<script src="store.js" defer></script>
 </body>
 </html>
